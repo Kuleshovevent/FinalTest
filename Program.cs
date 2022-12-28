@@ -22,7 +22,11 @@ void ZadachaFinal()
     // вводим новую переменную в которую будем присваивать вычесленный
     // элемент массива меньше либо равна 3 символа
 
- 
+    string[] newArrayStrings = new string[numbers]; // создаем новый массив
+    NewArray(ArrayStrings, newArrayStrings, length);
+
+    Console.WriteLine("элементы массива  длина которых меньше либо равна 3 символа:");
+    Console.WriteLine($"{PrintArray(newArrayStrings)}");
 }
 ZadachaFinal();
 
@@ -49,4 +53,18 @@ int CheckArray(string[] array, int length)
         if (array[i].Length <= length) result++;
     }
     return result;
+}
+
+// функция формирования нового массива строк
+void NewArray(string[] oldArray, string[] newArray, int lengthLimit)
+{
+    int temp = 0;
+    for (int i = 0; i < oldArray.Length; i++)
+    {
+        if (oldArray[i].Length <= lengthLimit)
+        {
+            newArray[temp] = oldArray[i];
+            temp++;
+        }
+    }
 }
